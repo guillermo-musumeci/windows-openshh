@@ -26,5 +26,13 @@ Write-Output "Install SSH"
 Invoke-Expression "&'C:\Program Files\OpenSSH-Win64\install-sshd.ps1'"
 
 # Generate SSH Keys
+Write-Output "Generate SSH Keys"
 New-Item -Path $ssh_progfolder -ItemType Directory
 Start-Process -NoNewWindow -FilePath "C:\Program Files\OpenSSH-Win64\ssh-keygen.exe" -ArgumentList "-A"
+
+# Start and Configure OpenSSH Services"
+Write-Output "Start and Configure OpenSSH Services"
+Start-Service -Name "sshd"
+Start-Service -Name "ssh-agent"
+Set-Service -Name "sshd" -StartupType Automatic
+Set-Service -Name "ssh-agent" -StartupType Automatic

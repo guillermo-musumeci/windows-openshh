@@ -40,7 +40,10 @@ Invoke-Expression "&'C:\Program Files\OpenSSH-Win64\install-sshd.ps1'"
 
 # Generate SSH Keys
 Write-Output "Generating SSH Keys ..."
-New-Item -Path $ssh_progfolder -ItemType Directory
+If(!(test-path $ssh_progfolder))
+{
+  New-Item -Path $ssh_progfolder -ItemType Directory
+}
 Start-Process -NoNewWindow -FilePath "C:\Program Files\OpenSSH-Win64\ssh-keygen.exe" -ArgumentList "-A"
 
 # Configure Windows Firewall

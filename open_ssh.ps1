@@ -1,3 +1,9 @@
+###################################################
+# OpenSSH-Windows                                 #
+# Unattended install of OpenSSH Server in Windows #
+# Guillermo Musumeci - September 2019             #
+###################################################
+
 # Variables
 [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls"
 $ssh_folder = "C:\Program Files\OpenSSH-Win64"

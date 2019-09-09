@@ -1,4 +1,4 @@
-# OpenSSH Server in Wwindows
+# OpenSSH Server in Windows
 
 Unattended install of OpenSSH Server in Windows
 
